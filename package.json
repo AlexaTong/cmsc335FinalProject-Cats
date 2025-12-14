@@ -1,0 +1,23 @@
+{
+  "name": "finalproject",
+  "version": "1.0.0",
+  "description": "**Submitted by:** Alexa Tong (atong05)\\ **Group Members:** Alexa Tong (atong05), Julius Brijbasi (juliusb)\\ **App Description:** Allows users to view cat pictures, view a list of cats available for adoption, and apply to adopt a cat.\\ **YouTube Video Link:** \\ **APIs:** CATAAS (https://cataas.com)\\ **Contact Email:** atong05@terpmail.umd.edu\\ **Deployed App Link:**",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "catAdoption.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "body-parser": "^2.2.1",
+    "dotenv": "^17.2.3",
+    "ejs": "^3.1.10",
+    "express": "^5.2.1",
+    "mongoose": "^9.0.1",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
+}

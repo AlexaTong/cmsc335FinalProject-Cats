@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="cat.ico" type="image/x-icon">
+  <title>Cat Images</title>
+</head>
+<body>
+  <script defer>
+    function getImageOrGIF(gif) {
+      let display = document.getElementById(gif ? "GIFDisplay" : "imageDisplay");
+      let loader = document.getElementById(gif ? "GIFLoader" : "imageLoader")
+      display.innerHTML = "";
+      loader.hidden = false;
+
+      fetch(`https://cataas.com/cat${gif ? "/gif" : ""}?type=square`).then(response => {
+        return response.blob();
+      }).then(blob => {
+        const ObjectURL = URL.createObjectURL(blob);
+        const element = document.createElement("img");
+        element.src = ObjectURL;
+        element.alt = "Cat image";
+        element.style.width = "350px";
+        loader.hidden = true;
+        display.innerHTML = "";
+        display.appendChild(element);
+      });
+    }
+  </script>
+
+  <%- include("nav") %>
+
+  <h2>Cute Cat Images and GIFs</h2>
+  <p>Click on the button below to generate a new cat image!</p>
+  <button type="button" onclick="getImageOrGIF(false)">Generate Image</button>
+  <div id="imageLoader" class="loader" hidden></div>
+  <div id="imageDisplay" class="display"></div>
+  <br>
+  <p>
+    Click on the button below to generate a new cat GIF!
+    <br>
+    <em>* This may take a moment</em>
+  </p>
+  <button type="button" onclick="getImageOrGIF(true)">Generate GIF</button>
+  <div id="GIFLoader" class="loader" hidden></div>
+  <div id="GIFDisplay" class="display"></div>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" href="../cat.ico" type="image/x-icon">
+  <title>Apply to Adopt</title>
+</head>
+<body>
+  <script defer>
+    function confirmSubmit() {
+      return confirm("Are you sure you are ready to submit your application?\nApplications can not be changed once submitted.");
+    }
+  </script>
+
+  <%- include("nav") %>
+
+  <h2>Apply to Adopt a Cat</h2>
+  <form action="/application/sendApp" method="post" onsubmit="confirmSubmit()">
+    <%- include("application") %>
+    
+    <button type="reset">Clear</button>
+    <button>Submit</button>
+  </form>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" href="../cat.ico" type="image/x-icon">
+  <title>View Your Application</title>
+</head>
+<body>
+  <%- include("nav") %>
+
+  <h2>View Your Application</h2>
+  <form action="/application/requestApp" method="get">
+    <fieldset>
+      <legend>Application Details</legend>
+      <label>
+        <span>*</span> Email: 
+        <input type="email" required name="email">
+      </label>
+      <br>
+      <label>
+        <span>*</span> Which cat's adoption application would you like to view?
+        <select required name="cat">
+          <option value="" disabled hidden selected>Select an option</option>
+          <option value="Marcus">Marcus</option>
+          <option value="Luna">Luna</option>
+          <option value="Oliver">Oliver</option>
+          <option value="Charlie">Charlie</option>
+          <option value="Oreo">Oreo</option>
+          <option value="Pumpkin">Pumpkin</option>
+          <option value="Coco">Coco</option>
+        </select>
+      </label>
+    </fieldset>
+
+    <button type="reset">Clear</button>
+    <button>View Application</button>
+  </form>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<fieldset>
+  <legend>Contact Info</legend>
+
+  <label>
+    <span>*</span> First Name: 
+    <input type="text" required name="fName" value="<%= formData.fName || '' %>" <%= readOnly ? "disabled" : "" %>>
+  </label>
+  <label>
+    <span>*</span> Last Name: 
+    <input type="text" required name="lName" value="<%= formData.lName || '' %>" <%= readOnly ? "disabled" : "" %>>
+  </label>
+  <br>
+  <label>
+    <span>*</span> Date of Birth: 
+    <input type="date" required name="dob" value="<%= formData.dob || '' %>" <%= readOnly ? "disabled" : "" %>>
+  </label>
+  <label>
+    <span>*</span> Phone Number: 
+    <input type="tel" required name="phone" value="<%= formData.phone || '' %>" <%= readOnly ? "disabled" : "" %>>
+  </label>
+  <br>
+  <label>
+    <span>*</span> Email: 
+    <input type="email" required name="email" value="<%= formData.email || '' %>" <%= readOnly ? "disabled" : "" %>>
+  </label>
+  <br>
+  <label>
+    <span>*</span> Address: 
+    <input required name="address" value="<%= formData.address || '' %>" <%= readOnly ? "disabled" : "" %>>
+  </label>
+</fieldset>
+
+<fieldset>
+  <legend>Cat Info</legend>
+
+  <label><span>*</span> Which cat would you like to adopt?
+    <select required name="cat" <%= readOnly ? "disabled" : "" %>>
+      <option value="" disabled hidden <%= readOnly ? "" : "selected" %>>Select an option</option>
+      <option value="Marcus" <%= formData.cat === "Marcus" ? "selected" : "" %>>Marcus</option>
+      <option value="Luna" <%= formData.cat === "Luna" ? "selected" : "" %>>Luna</option>
+      <option value="Oliver" <%= formData.cat === "Oliver" ? "selected" : "" %>>Oliver</option>
+      <option value="Charlie" <%= formData.cat === "Charlie" ? "selected" : "" %>>Charlie</option>
+      <option value="Oreo" <%= formData.cat === "Oreo" ? "selected" : "" %>>Oreo</option>
+      <option value="Pumpkin" <%= formData.cat === "Pumpkin" ? "selected" : "" %>>Pumpkin</option>
+      <option value="Coco" <%= formData.cat === "Coco" ? "selected" : "" %>>Coco</option>
+    </select>
+  </label>
+</fieldset>
+
+<fieldset>
+  <legend>Living Situation</legend>
+
+  <label><span>*</span> Do you:
+    <select required name="house" <%= readOnly ? "disabled" : "" %>>
+      <option value="" disabled hidden <%= readOnly ? "" : "selected" %>>Select an option</option>
+      <option value="own" <%= formData.house === "own" ? "selected" : "" %>>own your home</option>
+      <option value="rent" <%= formData.house === "rent" ? "selected" : "" %>>rent</option>
+      <option value="roommate" <%= formData.house === "roommate" ? "selected" : "" %>>live with friends/relatives</option>
+      <option value="other" <%= formData.house === "other" ? "selected" : "" %>>other</option>
+    </select>
+  </label>
+  <br>
+  <label>
+    If you selected other, explain here:
+    <br>
+    <textarea rows="4" cols="90" name="houseOther" <%= readOnly ? "disabled" : "" %>><%= formData.houseOther || '' %></textarea>
+  </label>
+  <br>
+  <label>
+    <span>*</span> How many people live in your household? 
+    <input type="number" min="0" name="numPeople" value="<%= formData.numPeople || '' %>" <%= readOnly ? "disabled" : "" %>>
+  </label>
+  <br>
+  <label>
+    <span>*</span> How many pets currently live in your household? 
+    <input type="number" min="0" name="numPets" value="<%= formData.numPets || '' %>" <%= readOnly ? "disabled" : "" %>>
+  </label>
+</fieldset>
+
+<fieldset>
+  <legend>Additional Comments</legend>
+
+  <textarea rows="7" cols="90" name="comments" <%= readOnly ? "disabled" : "" %>><%= formData.comments || '' %></textarea>
+</fieldset>

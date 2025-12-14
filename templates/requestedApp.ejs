@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" href="../cat.ico" type="image/x-icon">
+  <title>Your Application</title>
+</head>
+<body>
+  <%- include("nav") %>
+
+  <h2>Your Application for <%= formData.cat %></h2>
+  <h6>Application Status: <%= status %></h6>
+  <div class="app">
+    <%- include("application") %>
+  </div>
+</body>
+</html>
